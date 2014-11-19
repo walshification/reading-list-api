@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141113015453) do
+ActiveRecord::Schema.define(version: 20141119025713) do
 
   create_table "authored_books", force: true do |t|
     t.integer  "author_id"
@@ -36,6 +36,13 @@ ActiveRecord::Schema.define(version: 20141113015453) do
     t.integer  "author_id"
     t.integer  "published_year"
     t.string   "status"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "email"
+    t.string   "api_key"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

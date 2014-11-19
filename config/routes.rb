@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
 
-  resources :authors
-  resources :books
+  namespace :api do
+    namespace :v1 do
+      resources :authors
+      resources :books
+    end
+
+    namespace :v2 do
+      #routes
+    end
+  end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
