@@ -1,5 +1,5 @@
 class Api::V1::BooksController < ApplicationController
-  before_action :restrict_access
+  # before_action :restrict_access
 
   def index
     @books = Book.all

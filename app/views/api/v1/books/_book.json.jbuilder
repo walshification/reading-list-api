@@ -4,8 +4,7 @@ json.(book, :title, :published_year, :status)
 # Long hand syntax for dealing with associations:
 
 json.authors book.authors do |author|
-  json.first_name author.first_name
-  json.last_name author.last_name
+  json.name author.name
 end
 
 # Short hand syntax for associations:

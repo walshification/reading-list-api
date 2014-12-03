@@ -1,0 +1,22 @@
+<h1>Welcome to My Reading List</h1>
+
+<div ng-app="app">
+  <div ng-controller="booksCtrl">
+
+    <div>
+      Title: <input ng-model="newBookTitle"><br>
+      Author: <input ng-model="newBookAuthor"><br>
+      <button ng-click="addBook(newBookTitle, newBookAuthor)">Add Book</button>
+    </div>
+
+    <div ng-repeat="book in books track by $index">
+      <h2>{{ book.title }}</h2>
+      <h3 ng-repeat="author in book.authors track by $index">{{ author.name }}</h3>
+      <p>Published: {{ book.published_year }}</p>
+      <p>Status: {{ book.status }}</p>
+  
+    </div>
+
+
+  </div>
+</div>
