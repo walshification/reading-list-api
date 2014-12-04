@@ -19,7 +19,12 @@
       $scope.newBookTitle = null;
       $scope.newBookAuthor = null;
     };
-    
+
+    $scope.changeOrder = function(attribute) {
+      $scope.orderAttribute = attribute;
+      $scope.sortDirection = !$scope.sortDirection;
+    };
+    window.scope = $scope;
 
   });
 }());
