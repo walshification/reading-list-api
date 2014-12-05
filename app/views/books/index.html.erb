@@ -14,7 +14,7 @@
           Title: <button ng-click="changeOrder('title')">Sort By</button>
         </th>
         <th>
-          Authors: <button ng-click="changeOrder('authors[0].name')">Sort By</button>
+          Authors: <button ng-click="changeOrder('author.name')">Sort By</button>
         </th>
         <th>
           Year Published: <button ng-click="changeOrder('published_year')">Sort By</button>
@@ -26,13 +26,17 @@
       <tbody>
         <tr ng-repeat="book in books | filter: { title: titleFilter } | orderBy:orderAttribute:sortDirection" >
           <td>{{ book.title }}</td>
-          <td>{{ book.authors[0].name }}</td>
+          <td>{{ book.author.name }}</td>
           <td>{{ book.published_year }}</td>
           <td>{{ book.status }}</td>
         </tr>
       </tbody>
     </table>
     <br>
+
+    <div ng-repeat="error in errors">
+      {{ error }}
+    </div>
     
     <div id="book_form">
       Title: <input ng-model="newBookTitle"><br>

@@ -9,6 +9,14 @@ class Api::V1::BooksController < ApplicationController
     @book = Book.find_by(id: params[:id]) 
   end
 
+  def create
+    @book = Book.new(book_params)
+    if @book.save
+    else
+      render json: { errors: @book.errors.full_messages }, status: 422
+    end
+  end
+
   private
 
   def book_params

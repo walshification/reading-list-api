@@ -1,4 +1,6 @@
 class Book < ActiveRecord::Base
-  has_many :authored_books
-  has_many :authors, :through => :authored_books
+  belongs_to :author
+
+  validates_presence_of :title
+  # validates_presence_of :authors
 end

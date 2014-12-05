@@ -10,14 +10,13 @@
     $scope.addBook = function(title, author, year_published, reading_status) {
       var newBook = { title: title, author: author}
       $http.post('/api/v1/books.json', {book: newBook}).then(function(response) {
-
+        $scope.books.push(newBook);
+        $scope.newBookTitle = null;
+        $scope.newBookAuthor = null;
       }, function (error) {
-        $scope.error = error.statusText;
+        $scope.errors = error.data.errors;
       });
 
-      $scope.books.push(newBook);
-      $scope.newBookTitle = null;
-      $scope.newBookAuthor = null;
     };
 
     $scope.changeOrder = function(attribute) {
